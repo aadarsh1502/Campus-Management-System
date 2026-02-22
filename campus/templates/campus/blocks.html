@@ -1,0 +1,22 @@
+{% extends 'campus/base.html' %}
+{% block content %}
+<h2>Campus Blocks</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for block in blocks %}
+        <tr>
+            <td>{{ block.name }}</td>
+            <td>{{ block.location }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="2">No blocks available</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
